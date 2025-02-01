@@ -18,7 +18,7 @@ export function Header() {
           </span>
           <div className="relative group">
             <UserButton
-              signOutUrl="/"
+              afterSignOutUrl="/"
               appearance={{
                 elements: {
                   userButtonBox: "hover:opacity-80 transition-opacity",
