@@ -2,11 +2,9 @@
 
 import { Menu } from "lucide-react"
 import { UserButton, useUser } from "@clerk/nextjs"
-import { useRouter } from "next/navigation"
 
 export function Header() {
   const { user } = useUser();
-  const router = useRouter();
 
   return (
     <header className="bg-white shadow-md py-4 px-4">

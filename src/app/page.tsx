@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { auth, currentUser } from '@clerk/nextjs/server'
+import { currentUser } from '@clerk/nextjs/server'
 
 
 export default async function Home() {
