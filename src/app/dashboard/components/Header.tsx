@@ -2,9 +2,11 @@
 
 import { Menu } from "lucide-react"
 import { UserButton, useUser } from "@clerk/nextjs"
+import { useRouter } from "next/navigation"
 
 export function Header() {
   const { user } = useUser();
+  const router = useRouter();
 
   return (
     <header className="bg-white shadow-md py-4 px-4">
@@ -12,9 +14,19 @@ export function Header() {
         <h1 className="text-xl font-semibold">Dashboard</h1>
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-600">
-            {user?.firstName} {user?.lastName}
+            {user && `Welcome, ${user.firstName} ${user.lastName}`}
           </span>
-          <UserButton afterSignOutUrl="/" />
+          <div className="relative group">
+            <UserButton
+              signOutUrl="/"
+              appearance={{
+                elements: {
+                  userButtonBox: "hover:opacity-80 transition-opacity",
+                  userButtonTrigger: "rounded-full"
+                }
+              }}
+            />
+          </div>
           <button className="md:hidden" aria-label="Open menu">
             <Menu size={24} />
           </button>
