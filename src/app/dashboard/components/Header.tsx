@@ -12,7 +12,7 @@ export function Header() {
         <h1 className="text-xl font-semibold">Dashboard</h1>
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-600">
-            {user && `Welcome, ${user.firstName} ${user.lastName}`}
+            {user?.firstName && user?.lastName && `Welcome, ${user.firstName} ${user.lastName}`}
           </span>
           <div className="relative group">
             <UserButton
