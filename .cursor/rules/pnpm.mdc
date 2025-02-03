@@ -1,0 +1,5 @@
+---
+description: pnpm for this project
+globs: *.tsx
+---
+use pnpm for this project
